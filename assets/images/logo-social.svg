@@ -1,0 +1,53 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <defs>
+        <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#064e3b"/>
+            <stop offset="100%" stop-color="#022c22"/>
+        </linearGradient>
+        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#059669"/>
+            <stop offset="100%" stop-color="#065f46"/>
+        </linearGradient>
+    </defs>
+
+    <rect width="1200" height="630" fill="url(#bgGrad)"/>
+
+    <!-- Decorative Elements -->
+    <circle cx="100" cy="100" r="150" fill="#10b981" opacity="0.05"/>
+    <circle cx="1100" cy="530" r="180" fill="#10b981" opacity="0.05"/>
+
+    <!-- Logo Background -->
+    <rect x="150" y="230" width="140" height="140" rx="28" fill="url(#logoGrad)"/>
+
+    <!-- Structural Icon (scaled) -->
+    <path d="M185 345 L220 275 L255 345 Z" fill="none" stroke="white" stroke-width="5"/>
+    <path d="M197 325 L243 325" stroke="white" stroke-width="4"/>
+    <path d="M203 338 L237 338" stroke="white" stroke-width="3"/>
+    <circle cx="220" cy="295" r="8" fill="white"/>
+
+    <!-- Main Title -->
+    <text x="330" y="270" font-family="Arial, sans-serif" font-size="44" font-weight="bold" fill="white">
+        Middle East Structural
+    </text>
+
+    <!-- Subtitle -->
+    <text x="330" y="330" font-family="Arial, sans-serif" font-size="30" font-weight="600" fill="#10b981">
+        DAS &amp; Partners Engineering Consultancy
+    </text>
+
+    <!-- Description -->
+    <text x="330" y="385" font-family="Arial, sans-serif" font-size="22" fill="#a7f3d0">
+        Top Structural Engineering Firm in UAE
+    </text>
+
+    <!-- Location -->
+    <text x="330" y="425" font-family="Arial, sans-serif" font-size="22" fill="#a7f3d0">
+        Dubai • Sharjah • Abu Dhabi
+    </text>
+
+    <!-- Bottom Tagline -->
+    <text x="330" y="520" font-family="Arial, sans-serif" font-size="18" fill="#6ee7b7">
+        Expert Structural Design, Engineering &amp; Authority Approvals
+    </text>
+</svg>

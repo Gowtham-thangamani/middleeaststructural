@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load Sample Blogs - Middle East Structural</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f9fafb;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #059669;
+            margin-bottom: 20px;
+        }
+        button {
+            background: #059669;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        button:hover {
+            background: #047857;
+        }
+        .success {
+            background: #d1fae5;
+            color: #059669;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: none;
+        }
+        .info {
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        ul {
+            margin-top: 10px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📝 Sample Blog Posts Loader</h1>
+        <p>This tool will load sample blog posts into your admin panel so you can see how the blog system works.</p>
+        
+        <div class="info">
+            <strong>What will be added:</strong>
+            <ul>
+                <li>✅ 3 Sample blog posts about structural engineering</li>
+                <li>✅ 1 Featured blog post</li>
+                <li>✅ Different categories (Steel, Seismic, Foundation)</li>
+                <li>✅ All posts will be published and visible</li>
+            </ul>
+        </div>
+        
+        <button onclick="loadSampleBlogs()">Load Sample Blogs</button>
+        <button onclick="clearAllBlogs()" style="background: #dc2626;">Clear All Blogs</button>
+        <button onclick="window.location.href='blog.html'">View Blog Page</button>
+        <button onclick="window.location.href='admin/dashboard.html'">Open Admin Panel</button>
+        
+        <div id="success" class="success"></div>
+    </div>
+
+    <script>
+        function loadSampleBlogs() {
+            const sampleBlogs = [
+                {
+                    id: Date.now() + 1,
+                    title: "Structural Engineering in the Middle East: Innovation, Sustainability, and Mega Developments",
+                    slug: "structural-engineering-middle-east",
+                    category: "Industrial",
+                    excerpt: "Explore the latest innovations in structural engineering across the Middle East, from sustainable design practices to groundbreaking mega-developments reshaping city skylines.",
+                    content: `
+                        <h2>Introduction to Middle East Structural Engineering</h2>
+                        <p>The Middle East has emerged as a global hub for innovative structural engineering, pushing the boundaries of what's possible in construction and design. From the iconic Burj Khalifa to sustainable eco-cities, the region continues to set new standards in structural excellence.</p>
+                        
+                        <h3>Key Innovations</h3>
+                        <p>Modern structural engineering in the region incorporates:</p>
+                        <ul>
+                            <li>Advanced seismic design techniques</li>
+                            <li>Sustainable building materials</li>
+                            <li>BIM (Building Information Modeling) integration</li>
+                            <li>Smart structural monitoring systems</li>
+                        </ul>
+                        
+                        <h3>Mega Developments</h3>
+                        <p>The region is home to some of the world's most ambitious construction projects, requiring cutting-edge structural engineering solutions to ensure safety, durability, and sustainability.</p>
+                        
+                        <h3>Sustainability Focus</h3>
+                        <p>With increasing emphasis on environmental responsibility, structural engineers are incorporating green building practices, energy-efficient designs, and sustainable materials into every project.</p>
+                    `,
+                    published: true,
+                    scheduled: false,
+                    publishDateTime: null,
+                    featured: true,
+                    readTime: 8,
+                    date: new Date().toISOString().split('T')[0],
+                    time: "09:00",
+                    tags: ["innovation", "sustainability", "mega-projects"],
+                    metaDesc: "Discover how Middle East structural engineering is leading global innovation in construction and sustainable development.",
+                    keywords: "structural engineering, Middle East, innovation, sustainability, construction",
+                    media: null,
+                    viewCount: 0,
+                    createdAt: new Date().toISOString(),
+                    updatedAt: new Date().toISOString()
+                },
+                {
+                    id: Date.now() + 2,
+                    title: "Seismic Design Standards for High-Rise Buildings in the UAE",
+                    slug: "seismic-design-uae",
+                    category: "Seismic",
+                    excerpt: "Understanding the critical seismic design requirements for tall buildings in the United Arab Emirates and how engineers ensure structural safety in earthquake-prone regions.",
+                    content: `
+                        <h2>Seismic Design in the UAE</h2>
+                        <p>While the UAE is not located in a high seismic zone, proper seismic design is crucial for ensuring the safety and longevity of structures, especially high-rise buildings.</p>
+                        
+                        <h3>Design Standards</h3>
+                        <p>UAE structural engineers follow international seismic design codes including:</p>
+                        <ul>
+                            <li>IBC (International Building Code)</li>
+                            <li>ASCE 7 (American Society of Civil Engineers)</li>
+                            <li>Eurocode 8 for seismic design</li>
+                        </ul>
+                        
+                        <h3>Key Considerations</h3>
+                        <p>Engineers must account for:</p>
+                        <ul>
+                            <li>Soil-structure interaction</li>
+                            <li>Wind and seismic load combinations</li>
+                            <li>Ductility and energy dissipation</li>
+                            <li>Foundation design for lateral loads</li>
+                        </ul>
+                        
+                        <h3>Advanced Technologies</h3>
+                        <p>Modern seismic design incorporates base isolators, damping systems, and advanced modeling techniques to enhance structural resilience.</p>
+                    `,
+                    published: true,
+                    scheduled: false,
+                    publishDateTime: null,
+                    featured: false,
+                    readTime: 6,
+                    date: new Date(Date.now() - 86400000).toISOString().split('T')[0], // Yesterday
+                    time: "10:30",
+                    tags: ["seismic", "high-rise", "UAE", "safety"],
+                    metaDesc: "Learn about seismic design standards and best practices for high-rise buildings in the United Arab Emirates.",
+                    keywords: "seismic design, UAE, high-rise buildings, structural safety, earthquake",
+                    media: null,
+                    viewCount: 0,
+                    createdAt: new Date().toISOString(),
+                    updatedAt: new Date().toISOString()
+                },
+                {
+                    id: Date.now() + 3,
+                    title: "Steel Structure Design: Best Practices and Modern Techniques",
+                    slug: "steel-structure-design",
+                    category: "Steel",
+                    excerpt: "A comprehensive guide to steel structure design, covering material selection, connection details, and modern fabrication techniques for optimal performance.",
+                    content: `
+                        <h2>Steel Structures in Modern Construction</h2>
+                        <p>Steel remains one of the most versatile and reliable materials in structural engineering, offering excellent strength-to-weight ratios and design flexibility.</p>
+                        
+                        <h3>Material Selection</h3>
+                        <p>Choosing the right steel grade is crucial for project success:</p>
+                        <ul>
+                            <li>A36 for general construction</li>
+                            <li>A572 for high-strength applications</li>
+                            <li>A992 for wide-flange shapes</li>
+                            <li>Weathering steel for corrosion resistance</li>
+                        </ul>
+                        
+                        <h3>Connection Design</h3>
+                        <p>Proper connection design ensures structural integrity:</p>
+                        <ul>
+                            <li>Bolted connections for ease of assembly</li>
+                            <li>Welded connections for maximum strength</li>
+                            <li>Hybrid connections combining both methods</li>
+                        </ul>
+                        
+                        <h3>Fabrication and Erection</h3>
+                        <p>Modern fabrication techniques include CNC cutting, robotic welding, and precise quality control to ensure dimensional accuracy and structural performance.</p>
+                        
+                        <h3>Corrosion Protection</h3>
+                        <p>In harsh Middle Eastern environments, proper corrosion protection through galvanizing, painting, or weathering steel selection is essential for long-term durability.</p>
+                    `,
+                    published: true,
+                    scheduled: false,
+                    publishDateTime: null,
+                    featured: false,
+                    readTime: 7,
+                    date: new Date(Date.now() - 172800000).toISOString().split('T')[0], // 2 days ago
+                    time: "14:00",
+                    tags: ["steel", "design", "fabrication", "construction"],
+                    metaDesc: "Master steel structure design with best practices, material selection, and modern fabrication techniques.",
+                    keywords: "steel structure, design, fabrication, construction, structural engineering",
+                    media: null,
+                    viewCount: 0,
+                    createdAt: new Date().toISOString(),
+                    updatedAt: new Date().toISOString()
+                }
+            ];
+
+            // Save to localStorage
+            localStorage.setItem('blogPosts', JSON.stringify(sampleBlogs));
+            
+            // Show success message
+            const successDiv = document.getElementById('success');
+            successDiv.style.display = 'block';
+            successDiv.innerHTML = `
+                <strong>✅ Success!</strong><br>
+                3 sample blog posts have been loaded.<br><br>
+                <strong>What to do next:</strong><br>
+                1. <a href="blog.html" style="color: #059669;">View the Blog Page</a> to see them displayed<br>
+                2. <a href="admin/dashboard.html" style="color: #059669;">Open Admin Panel</a> to edit or add more
+            `;
+        }
+
+        function clearAllBlogs() {
+            if (confirm('Are you sure you want to delete ALL blog posts? This cannot be undone!')) {
+                localStorage.removeItem('blogPosts');
+                const successDiv = document.getElementById('success');
+                successDiv.style.display = 'block';
+                successDiv.style.background = '#fee2e2';
+                successDiv.style.color = '#dc2626';
+                successDiv.textContent = 'All blog posts have been deleted.';
+            }
+        }
+
+        // Check if blogs exist
+        window.addEventListener('load', () => {
+            const blogs = JSON.parse(localStorage.getItem('blogPosts') || '[]');
+            if (blogs.length > 0) {
+                const successDiv = document.getElementById('success');
+                successDiv.style.display = 'block';
+                successDiv.innerHTML = `
+                    <strong>ℹ️ Info:</strong> You currently have ${blogs.length} blog post(s) in your system.<br>
+                    Loading sample blogs will replace them.
+                `;
+            }
+        });
+    </script>
+</body>
+</html>
