@@ -953,18 +953,18 @@
             </div>
             <div class="contact-form">
                 <h3>Send Us a Message</h3>
-                <form id="contactForm">
+                <form id="contactForm" data-das-lead data-form-type="contact">
                     <div class="form-row">
-                        <div class="form-group"><label>Full Name *</label><input type="text" placeholder="Your name" required></div>
-                        <div class="form-group"><label>Email Address *</label><input type="email" placeholder="your@email.com" required></div>
+                        <div class="form-group"><label>Full Name *</label><input type="text" name="name" placeholder="Your name" required></div>
+                        <div class="form-group"><label>Email Address *</label><input type="email" name="email" placeholder="your@email.com" required></div>
                     </div>
                     <div class="form-row">
-                        <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="+971 XX XXX XXXX"></div>
+                        <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="+971 XX XXX XXXX"></div>
                         <div class="form-group"><label>Service Required</label>
-                            <select><option value="">Select a service</option><option>Structural Design</option><option>Steel Structure</option><option>Concrete Engineering</option><option>Foundation Engineering</option><option>Assessment</option><option>Seismic Design</option><option>Other</option></select>
+                            <select name="service"><option value="">Select a service</option><option>Structural Design</option><option>Steel Structure</option><option>Concrete Engineering</option><option>Foundation Engineering</option><option>Assessment</option><option>Seismic Design</option><option>Other</option></select>
                         </div>
                     </div>
-                    <div class="form-group full"><label>Project Details *</label><textarea placeholder="Describe your project requirements..." required></textarea></div>
+                    <div class="form-group full"><label>Project Details *</label><textarea name="message" placeholder="Describe your project requirements..." required></textarea></div>
                     <button type="submit" class="form-submit">Send Message →</button>
                 </form>
             </div>
@@ -1245,7 +1245,7 @@
         function closeMenu(){mobileMenu.classList.remove('active');mobileOverlay.classList.remove('active');document.body.style.overflow=''}
         mobileMenuClose.addEventListener('click',closeMenu);mobileOverlay.addEventListener('click',closeMenu);
         document.querySelectorAll('a').forEach(function(link){if(link.hostname===window.location.hostname&&!link.hash){link.addEventListener('click',function(e){var href=this.getAttribute('href');if(href&&href!=='#'&&!href.startsWith('mailto')&&!href.startsWith('tel')&&!href.startsWith('http')){e.preventDefault();document.getElementById('loader').classList.remove('hidden');setTimeout(function(){window.location.href=href},600)}})}});
-        document.getElementById('contactForm').addEventListener('submit',function(e){e.preventDefault();alert('Thank you! Our team will contact you within 24 hours.');this.reset()});
+        // Contact form submission handled by DAS Central Leads (/leads.js via data-das-lead)
     </script>
 
     <!-- ANALYTICS TRACKING SYSTEM -->
@@ -1468,3 +1468,7 @@
         const tracker = new AnalyticsTracker();
     })();
     </script>
+
+<!-- DAS Central Leads -->
+<script>window.DAS_LEADS_ENDPOINT='https://www.dasandpartnersengineering.com/leads/api/submit.php';window.DAS_LEADS_SITE='middleeaststructural';</script>
+<script src="/leads.js" defer></script>
