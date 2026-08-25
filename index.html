@@ -2661,8 +2661,8 @@
             <div class="newsletter-label">Bi-Weekly Newsletter</div>
             <h2 class="newsletter-title">Significant Project Signings</h2>
             <p class="newsletter-desc">Stay informed with our bi-weekly newsletter highlighting major project signings, new contracts, and landmark engineering achievements by DAS and Partners.</p>
-            <form class="newsletter-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Subscribed!'; this.querySelector('button').style.background='#047857';">
-                <input type="email" placeholder="Enter your email address" required>
+            <form class="newsletter-form" data-das-lead data-form-type="newsletter">
+                <input type="email" name="email" placeholder="Enter your email address" required>
                 <button type="submit">Subscribe</button>
             </form>
             <div class="newsletter-features">
